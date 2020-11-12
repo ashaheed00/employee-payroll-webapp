@@ -137,7 +137,7 @@ select {
 .buttonParent {
   display: flex;
   margin-bottom: 20px 0px 10px 0px;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
 .button {

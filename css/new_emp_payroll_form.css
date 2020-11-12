@@ -45,6 +45,7 @@ body {
 }
 
 .form-content {
+  margin: 20px 0px 20px 0px;
   min-height: calc(100%-80px);
   background-color: #f7f7f7;
   display: flex;
@@ -55,6 +56,7 @@ body {
 
 .form {
   width: 65%;
+  margin: 20px 0px 20px 0px;
   padding: 44px 60px;
   background: #ffffff 0% 0% no-repeat padding-box;
   box-shadow: 0px 3px 6px #00000029;
@@ -135,7 +137,7 @@ select {
 .buttonParent {
   display: flex;
   margin-bottom: 20px 0px 10px 0px;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .button {
@@ -149,6 +151,7 @@ select {
   min-width: 140px;
   padding: 5px 5px;
   border: 1px solid #707070;
+  border-radius: 5px;
   cursor: pointer;
 }
 

@@ -168,3 +168,39 @@ select {
 .resetButton {
   background-color: #42515f;
 }
+
+@media only screen and (max-width: 960px) {
+  .cancelButton {
+    margin-left: 0px;
+  }
+  .form {
+    width: 85%;
+    padding: 44px 20px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .form {
+    margin-top: 10px;
+    width: 110%;
+  }
+  .row {
+    flex-direction: column;
+  }
+  .profile-radio-content {
+    flex-wrap: wrap;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .form {
+    margin-top: 10px;
+    width: 110%;
+  }
+  .row {
+    flex-direction: column;
+  }
+  .profile-radio-content {
+    flex-wrap: wrap;
+  }
+}

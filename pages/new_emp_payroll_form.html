@@ -2,64 +2,86 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Employee Payroll Form</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" rel='stylesheet'>
-    <link rel="stylesheet" href="../css/new_emp_payroll_form.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Employee Payroll Form</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" rel='stylesheet'>
+  <link rel="stylesheet" href="../css/new_emp_payroll_form.css">
 </head>
 
 <body>
-    <header class="header-content header">
-        <div class="logo-content">
-            <img src="../assets/images/logo.png" alt="EP">
-            <div>
-                <span class="emp-text">EMPLOYEE</span>
-                <span class="emp-text emp-payroll">PAYROLL</span>
-            </div>
-        </div>
-    </header>
-    <div class="form-content">
-        <form class="form" action="#" onsubmit="sav(); return false">
-            <div class="form-head">Employee Payroll Form</div>
-            <div class="row-content">
-                <div class="row-content">
-                    <label class="label text" for="name">Name</label>
-                    <input class="input" type="text" id="input" name="name" placeholder="Enter Your Name" required>
-                </div>
-            </div>
-            <div class="row-content">
-                <label for="profile" class="label text">Choose Profile Image</label>
-                <div class="profile-radio-content">
-                    <label>
-                        <input type="radio" id="profile1" name="profile" value="../assets/profile-images/Ellipse-1.png"
-                            required>
-                        <img src="../assets/profile-images/Ellipse -1.png" class="profile" id="image1">
-                    </label>
-                    <label>
-                        <input type="radio" id="profile2" name="profile" value="../assets/profile-images/Ellipse-2.png"
-                            required>
-                        <img src="../assets/profile-images/Ellipse -2.png" class="profile" id="image2">
-                    </label>
-                    <label>
-                        <input type="radio" id="profile3" name="profile" value="../assets/profile-images/Ellipse-3.png"
-                            required>
-                        <img src="../assets/profile-images/Ellipse -3.png" class="profile" id="image3">
-                    </label>
-                    <label>
-                        <input type="radio" id="profile4" name="profile" value="../assets/profile-images/Ellipse-4.png"
-                            required>
-                        <img src="../assets/profile-images/Ellipse -4.png" class="profile" id="image4">
-                    </label>
-                    <label>
-                        <input type="radio" id="profile5" name="profile" value="../assets/profile-images/Ellipse-5.png"
-                            required>
-                        <img src="../assets/profile-images/Ellipse -5.png" class="profile" id="image5">
-                    </label>
-                </div>
-            </div>
-        </form>
+  <header class="header-content header">
+    <div class="logo-content">
+      <img src="../assets/images/logo.png" alt="EP">
+      <div>
+        <span class="emp-text">EMPLOYEE</span>
+        <span class="emp-text emp-payroll">PAYROLL</span>
+      </div>
     </div>
+  </header>
+  <div class="form-content">
+    <form class="form" action="#" onsubmit="sav(); return false">
+      <div class="form-head">Employee Payroll Form</div>
+      <div class="row-content">
+        <div class="row-content">
+          <label class="label text" for="name">Name</label>
+          <input class="input" type="text" id="input" name="name" placeholder="Enter Your Name" required>
+        </div>
+      </div>
+      <div class="row-content">
+        <label for="profile" class="label text">Choose Profile Image</label>
+        <div class="profile-radio-content">
+          <label>
+            <input type="radio" id="profile1" name="profile" value="../assets/profile-images/Ellipse-1.png" required>
+            <img src="../assets/profile-images/Ellipse -1.png" class="profile" id="image1">
+          </label>
+          <label>
+            <input type="radio" id="profile2" name="profile" value="../assets/profile-images/Ellipse-2.png" required>
+            <img src="../assets/profile-images/Ellipse -2.png" class="profile" id="image2">
+          </label>
+          <label>
+            <input type="radio" id="profile3" name="profile" value="../assets/profile-images/Ellipse-3.png" required>
+            <img src="../assets/profile-images/Ellipse -3.png" class="profile" id="image3">
+          </label>
+          <label>
+            <input type="radio" id="profile4" name="profile" value="../assets/profile-images/Ellipse-4.png" required>
+            <img src="../assets/profile-images/Ellipse -4.png" class="profile" id="image4">
+          </label>
+          <label>
+            <input type="radio" id="profile5" name="profile" value="../assets/profile-images/Ellipse-5.png" required>
+            <img src="../assets/profile-images/Ellipse -5.png" class="profile" id="image5">
+          </label>
+        </div>
+      </div>
+      <div class="row-content">
+        <label class="label text" for="gender">Gender</label>
+        <div>
+          <input type="radio" name="male" id="male" value="male">
+          <label class="text" for="male">Male</label>
+          <input type="radio" name="female" id="female" value="female">
+          <label class="text" for="male">Female</label>
+          <input type="radio" name="others" id="others" value="Others">
+          <label class="text" for="others">Others</label>
+        </div>
+      </div>
+      <div class="row-content">
+        <label class="label text" for="department">Department</label>
+        <div>
+          <input class="checkbox" type="checkbox" name="hr" id="hr" value="HR">
+          <label class="text" for="hr">HR</label>
+          <input class="checkbox" type="checkbox" name="sales" id="sales" value="Sales">
+          <label class="text" for="sales">Sales</label>
+          <input class="checkbox" type="checkbox" name="others" id="others" value="Others">
+          <label class="text" for="others">Others</label>
+        </div>
+      </div>
+      <div class="row-content">
+        <label class="label text" for="salary">Salary</label>
+        <input type="range" name="salary" id="salary" min="30000" max="100000" step="500" value="40000">
+        <output class="salary-output text">50000</output>
+      </div>
+    </form>
+  </div>
 </body>
 
 </html>

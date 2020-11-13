@@ -1,18 +1,17 @@
 class EmployeePayroll {
-  constructor(...params) {
-    this.id = params[0];
-    this.name = params[1];
-    this.salary = params[2];
-    this.gender = params[3];
-    this.startDate = params[4];
-  }
+  // constructor(...params) {
+  //   this.id = params[0];
+  //   this.name = params[1];
+  //   this.salary = params[2];
+  //   this.gender = params[3];
+  //   this.startDate = params[4];
+  // }
 
   get id() {
     return this._id;
   }
   set id(id) {
-    if (parseInt(id) > 0) this._id = id;
-    else throw "Given id format is incorrect";
+    this._id = id;
   }
   get name() {
     return this._name;

@@ -71,6 +71,6 @@ class EmployeePayroll {
       this.startDate === undefined
         ? "undefined"
         : this.startDate.toLocaleDateString("en-US", format);
-    return `id:${this.id}, name:${this.name}, salary:${this.salary}, gender:${this.gender}, startDate:${date}`;
+    return `id:${this.id}, name:${this.name}, salary:${this.salary}, gender:${this.gender}, startDate:${date}, department:${this.department}, notes:${this.note}`;
   }
 }

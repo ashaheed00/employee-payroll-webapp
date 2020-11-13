@@ -17,7 +17,9 @@ class EmployeePayroll {
     return this._name;
   }
   set name(name) {
-    const nameRegex = RegExp("^[A-Z]{1}[a-z]{2,}$");
+    const nameRegex = RegExp(
+      "^[A-Z]{1}[a-z]{2,}\\s?([A-Z]{1}[a-z]{1,}\\s?){0,2}$"
+    );
     if (nameRegex.test(name)) this._name = name;
     else throw "Given name is in wrong format";
   }
@@ -57,9 +59,10 @@ class EmployeePayroll {
     return this._startDate;
   }
   set startDate(startDate) {
-    if (startDate <= new Date() || startDate == undefined)
-      this._startDate = startDate;
-    else throw "Given start date is in future";
+    if (startDate > new Date()) throw "Given start date is in future";
+    else if (startDate < new Date(Date.UTC(1970, 1, 1)))
+      throw "Given start date is before Jan, 1970";
+    else this._startDate = startDate;
   }
 
   toString() {

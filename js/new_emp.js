@@ -42,6 +42,7 @@ const save = () => {
   try {
     let employeePayroll = createEmployeePayroll();
     createAndUpdateStorage(employeePayroll);
+    resetForm();
   } catch (e) {
     return;
   }
@@ -67,7 +68,7 @@ const createEmployeePayroll = () => {
       getInputValueById("#day")
     )
   );
-  alert(employeePayroll.toString());
+  alert(employeePayroll);
   return employeePayroll;
 };
 const getSelectedValues = (propertyValue) => {
@@ -97,3 +98,29 @@ function createAndUpdateStorage(employeePayroll) {
   localStorage.setItem("EmployeePayrollList", JSON.stringify(empList));
   alert(localStorage.getItem("EmployeePayrollList"));
 }
+
+// reset method
+const resetForm = () => {
+  setValue("#name", "");
+  unsetSelectedValues("[name=profile");
+  unsetSelectedValues("[name=gender");
+  unsetSelectedValues("[name=department");
+  setValue("#salary", "50000");
+  setValue("#day", "1");
+  setValue("#month", "1");
+  setValue("#year", "2020");
+};
+
+const setValue = (id, value) => {
+  document.querySelector(id).value = value;
+};
+
+const unsetSelectedValues = (propertyValue) => {
+  document.querySelectorAll(propertyValue).forEach((item) => {
+    item.checked = false;
+  });
+};
+
+const setTextValue = (id, value) => {
+  document.querySelector(id).textContent = value;
+};

@@ -54,7 +54,7 @@ class EmployeePayroll {
     const now = new Date();
     if (startDate > now) throw "Given start date is in future";
     const diffInDay = (now - startDate) / (1000 * 60 * 60 * 24);
-    if (diffInDay > 300) throw "Given start date is beyond 30days";
+    if (diffInDay > 30) throw "Given start date is beyond 30days";
     this._startDate = startDate;
   }
 

@@ -51,33 +51,8 @@ const save = (event) => {
     resetForm();
     window.location.href = site_properties.home_page;
   } catch (e) {
-    console.log("gar bar h");
     return;
   }
-};
-
-const createEmployeePayroll = () => {
-  let employeePayroll = new EmployeePayroll();
-  employeePayroll.id = new Date().getTime();
-  try {
-    employeePayroll.name = getInputValueById("#name");
-  } catch (e) {
-    setTextValue(".text-error", e);
-    throw e;
-  }
-  employeePayroll.profilePic = getSelectedValues("[name=profile]").pop();
-  employeePayroll.gender = getSelectedValues("[name=gender]").pop();
-  employeePayroll.department = getSelectedValues("[name=department]");
-  employeePayroll.salary = getInputValueById("#salary");
-  employeePayroll.note = getInputValueById("#notes");
-  employeePayroll.startDate = new Date(
-    Date.UTC(
-      getInputValueById("#year"),
-      getInputValueById("#month") - 1,
-      getInputValueById("#day")
-    )
-  );
-  return employeePayroll;
 };
 
 const getSelectedValues = (propertyValue) => {
@@ -150,6 +125,7 @@ const setEmployeePayrollData = (employeePayrollData) => {
     employeePayrollData.name = employeePayrollObj._name;
   } catch (e) {
     setTextValue(".text-error", e);
+    throw e;
   }
   employeePayrollData.profilePic = employeePayrollObj._profilePic;
   employeePayrollData.gender = employeePayrollObj._gender;
@@ -160,6 +136,7 @@ const setEmployeePayrollData = (employeePayrollData) => {
     employeePayrollData.startDate = employeePayrollObj._startDate;
   } catch (e) {
     setTextValue(".date-error", e);
+    throw e;
   }
   alert(employeePayrollData.toString());
 };

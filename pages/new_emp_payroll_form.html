@@ -71,14 +71,17 @@
       </div>
       <div class="row-content">
         <label class="label text" name="department" for="department">Department</label>
-        <div>
+        <div id="department">
           <input class="checkbox" type="checkbox" name="department" id="hr" value="HR">
           <label class="text" for="hr">HR</label>
           <input class="checkbox" type="checkbox" name="department" id="sales" value="Sales">
           <label class="text" for="sales">Sales</label>
+          <input class="checkbox" type="checkbox" name="department" id="engineer" value="Enginner">
+          <label class="text" for="sales">Enginner</label>
           <input class="checkbox" type="checkbox" name="department" id="others" value="Others">
           <label class="text" for="others">Others</label>
         </div>
+        <error-output class="dept-error" for='text' style="color: blue;">Select minimum one</error-output>
       </div>
       <div class="row-content">
         <label class="label text" for="salary">Salary</label>

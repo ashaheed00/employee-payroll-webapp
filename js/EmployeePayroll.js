@@ -54,7 +54,33 @@ class EmployeePayroll {
     const now = new Date();
     if (startDate > now) throw "Given start date is in future";
     const diffInDay = (now - startDate) / (1000 * 60 * 60 * 24);
-    if (diffInDay > 30) throw "Given start date is beyond 30days";
+    if (diffInDay > 300) throw "Given start date is beyond 30days";
     this._startDate = startDate;
+  }
+
+  toString() {
+    const format = { year: "numeric", month: "short", day: "numeric" };
+    const date =
+      this.startDate === undefined
+        ? "undefined"
+        : this.startDate.toLocaleDateString("en-GB", format);
+    return (
+      "id = " +
+      this.id +
+      ", name = " +
+      this.name +
+      ", gender = " +
+      this.gender +
+      ", profilePic = " +
+      this.profilePic +
+      ", department = " +
+      this.department +
+      ", salary = " +
+      this.salary +
+      ", startDate = " +
+      date +
+      ", note = " +
+      this.note
+    );
   }
 }

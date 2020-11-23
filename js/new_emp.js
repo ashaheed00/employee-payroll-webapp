@@ -17,16 +17,18 @@ window.addEventListener("DOMContentLoaded", (event) => {
       textError.textContent = e;
     }
   });
+  const day = document.querySelector("#day");
+  const month = document.querySelector("#month");
+  const year = document.querySelector("#year");
   const startdate = document.querySelector("#startDate");
   startdate.addEventListener("input", function () {
-    const day = document.querySelector("#day");
-    const month = document.querySelector("#month");
-    const year = document.querySelector("#year");
     try {
-      checkStartDate(new Date(year, month, day));
-      new EmployeePayroll().startDate = new Date(
-        Date.UTC(year.value, month.value - 1, day.value)
+      checkStartDate(
+        new Date(Date.UTC(year.value, month.value - 1, day.value))
       );
+      // new EmployeePayroll().startDate = new Date(
+      //   Date.UTC(year.value, month.value - 1, day.value)
+      // );
       setTextValue(".date-error", "");
     } catch (e) {
       setTextValue(".date-error", e);
@@ -48,9 +50,13 @@ const save = (event) => {
   event.stopPropagation();
   try {
     setEmployeePayrollObject();
-    createAndUpdateStorage();
-    resetForm();
-    window.location.href = site_properties.home_page;
+    if (site_properties.use_local_storage.match("true")) {
+      createAndUpdateStorage();
+      resetForm();
+      window.location.href = site_properties.home_page;
+    } else {
+      createEmployeePayroll();
+    }
   } catch (e) {
     return;
   }
@@ -71,6 +77,19 @@ const getInputValueById = (id) => {
 const getInputElementValue = (id) => {
   let value = document.getElementById(id).value;
   return value;
+};
+
+const createEmployeePayroll = () => {
+  let postURL = site_properties.server_url;
+  let methodCall = "POST";
+  makeServiceCall(methodCall, postURL, true, employeePayrollObj)
+    .then((data) => {
+      resetForm();
+      window.location.href = site_properties.home_page;
+    })
+    .catch((error) => {
+      throw error;
+    });
 };
 
 const setEmployeePayrollObject = () => {

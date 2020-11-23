@@ -11,9 +11,8 @@ const checkName = (name) => {
 };
 
 const checkStartDate = (startDate) => {
-  let now = new Date();
-  if (startDate <= now) {
-    let diff = Math.abs(now.getTime() - startDate.getTime());
-    if (diff / (1000 * 60 * 60 * 24) > 30) throw "Start Date is beyond 30 Days";
-  } else throw "Strat Date is a future Date";
+  const now = new Date();
+  if (startDate > now) throw "Given start date is in future";
+  const diffInDay = (now - startDate) / (1000 * 60 * 60 * 24);
+  if (diffInDay > 30) throw "Given start date is beyond 30days";
 };

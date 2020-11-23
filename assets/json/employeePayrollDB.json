@@ -38,8 +38,8 @@
       "id": 3
     },
     {
-      "_name": "Akram Shaheed",
-      "_profilePic": "../assets/profile-images/Ellipse-1.png",
+      "_name": "Akram",
+      "_profilePic": "../assets/profile-images/Ellipse-2.png",
       "_gender": "Male",
       "_department": [
         "HR",
@@ -47,7 +47,7 @@
       ],
       "_salary": "79000",
       "_note": "fml",
-      "_startDate": "2020-10-31T18:30:00.000Z",
+      "_startDate": "2020-10-30T18:30:00.000Z",
       "id": 4
     }
   ]

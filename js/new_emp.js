@@ -113,36 +113,6 @@ const createAndUpdateStorage = () => {
   );
 };
 
-/*
-const createEmployeePayrollData = () => {
-  let employeePayrollData = new EmployeePayroll();
-  employeePayrollData.id = new Date().getTime();
-  setEmployeePayrollData(employeePayrollData);
-  return employeePayrollData;
-};
-
-const setEmployeePayrollData = (employeePayrollData) => {
-  try {
-    employeePayrollData.name = employeePayrollObj._name;
-  } catch (e) {
-    setTextValue(".text-error", e);
-    throw e;
-  }
-  employeePayrollData.profilePic = employeePayrollObj._profilePic;
-  employeePayrollData.gender = employeePayrollObj._gender;
-  employeePayrollData.department = employeePayrollObj._department;
-  employeePayrollData.salary = employeePayrollObj._salary;
-  employeePayrollData.note = employeePayrollObj._note;
-  try {
-    employeePayrollData.startDate = employeePayrollObj._startDate;
-  } catch (e) {
-    setTextValue(".date-error", e);
-    throw e;
-  }
-  alert(employeePayrollData.toString());
-};
-*/
-
 // reset method
 const resetForm = () => {
   setValue("#name", "");

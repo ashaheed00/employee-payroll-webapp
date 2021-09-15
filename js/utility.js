@@ -16,3 +16,6 @@ const checkStartDate = (startDate) => {
   const diffInDay = (now - startDate) / (1000 * 60 * 60 * 24);
   if (diffInDay > 30) throw "Given start date is beyond 30days";
 };
+
+
+// cool shit done using github-vscode web version just pressing . while you are on the repo page
